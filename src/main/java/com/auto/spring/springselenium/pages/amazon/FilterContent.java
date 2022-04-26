@@ -7,15 +7,28 @@ import com.auto.spring.springselenium.utility.Scrollers;
 import com.auto.spring.springselenium.utility.Visibility;
 import org.springframework.beans.factory.annotation.Value;
 import com.auto.spring.springselenium.utility.ElementActions;
+import org.springframework.beans.factory.annotation.Autowired;
 import com.auto.spring.springselenium.utility.ElementTypeConverter;
 
 @Component
 public class FilterContent extends Base
 {
-    @Value("${filterCategoryHeading}")
+    @Autowired
+    private Scrollers scrollers;
+
+    @Autowired
+    private ElementTypeConverter elementTypeConverter;
+
+    @Autowired
+    private Visibility visibility;
+
+    @Autowired
+    private ElementActions elementActions;
+
+    @Value("${filters.categoryHeading}")
     private String filterCategoryHeading;
 
-    @Value("${filterCategoryContentName}")
+    @Value("${filters.categoryContentName}")
     private String filterCategoryContentName;
 
     private final By txtFilterContent = By.xpath(".//*[@id='s-refinements']//*[text()='"+filterCategoryHeading+"']");
@@ -26,20 +39,20 @@ public class FilterContent extends Base
         boolean flag = false;
         try
         {
-            Scrollers.scrollToElement(driver, ElementTypeConverter.returnWebElement(driver, txtFilterContent));
-            if (Visibility.isElementDisplayed(ElementTypeConverter.returnWebElement(driver, txtFilterContent)))
-                if(ElementActions.clickOnElement(ElementTypeConverter.returnWebElement(driver, chkBoxFilterContentUnderCategory)))
+            this.scrollers.scrollToElement(this.elementTypeConverter.returnWebElement(txtFilterContent));
+            if (this.visibility.isElementDisplayed(this.elementTypeConverter.returnWebElement(txtFilterContent)))
+                if(this.elementActions.clickOnElement(this.elementTypeConverter.returnWebElement(chkBoxFilterContentUnderCategory)))
                     flag = true;
             return flag;
         } catch (Exception e)
         {
-            return flag;
+            return false;
         }
     }
 
     @Override
     public boolean isAt()
     {
-        return this.wait.until((d -> Visibility.isElementDisplayed(ElementTypeConverter.returnWebElement(driver, this.txtFilterContent))));
+        return this.wait.until((d -> this.visibility.isElementDisplayed(this.elementTypeConverter.returnWebElement(this.txtFilterContent))));
     }
 }

@@ -8,12 +8,12 @@ import org.openqa.selenium.NoSuchElementException;
 @Component
 public class Visibility
 {
-    public static boolean isElementDisplayed(WebElement element)
+    public boolean isElementDisplayed(WebElement element)
     {
         try
         {
             return element.isDisplayed();
-        } catch (NoSuchElementException e)
+        } catch (Exception e)
         {
             return false;
         }

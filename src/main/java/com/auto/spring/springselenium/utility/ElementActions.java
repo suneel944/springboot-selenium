@@ -5,13 +5,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.JavascriptExecutor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 
 @Component
 public class ElementActions
 {
-    public static boolean clickOnElement(WebElement element)
+    @Autowired
+    private JavascriptExecutor js;
+
+    public boolean clickOnElement(WebElement element)
     {
         try
         {
@@ -23,12 +27,11 @@ public class ElementActions
         }
     }
 
-    public boolean clickOnElementUsingJs(WebDriver driver, WebElement element)
+    public boolean clickOnElementUsingJs(WebElement element)
     {
         try
         {
-            JavascriptExecutor js = (JavascriptExecutor) driver;
-            js.executeScript("arguments[0].click();",element);
+            this.js.executeScript("arguments[0].click();",element);
             return true;
         } catch (Exception e)
         {

@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -11,14 +12,17 @@ import java.util.List;
 @Component
 public class ElementTypeConverter
 {
-    public static WebElement returnWebElement(WebDriver driver, By element)
+    @Autowired
+    private WebDriver driver;
+
+    public WebElement returnWebElement(By element)
     {
-        return driver.findElement(element);
+        return this.driver.findElement(element);
     }
 
-    public static List<WebElement> returnWebElements(WebDriver driver, By element)
+    public List<WebElement> returnWebElements(By element)
     {
-        return driver.findElements(element);
+        return this.driver.findElements(element);
     }
 
     public static By returnByLocator(WebElement element)

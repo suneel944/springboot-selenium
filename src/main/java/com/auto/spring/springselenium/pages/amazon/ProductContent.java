@@ -44,7 +44,7 @@ public class ProductContent extends Base
 
     public boolean clickOnTheNthHighestPricedProduct()
     {
-        List<WebElement> elements = this.elementTypeConverter.returnWebElements(weProductCardPrices);
+        List<WebElement> elements = this.elementTypeConverter.returnWebElements(this.weProductCardPrices);
         /*remove sponsored product adds from the list as they are not visible in the UI*/
         elements.remove(0);
         elements.remove(1);
@@ -53,7 +53,7 @@ public class ProductContent extends Base
         for (WebElement e: elements
              )
         {
-            if (Integer.parseInt(e.getText().replaceAll(",","")) == priceList.get(productIndex))
+            if (Integer.parseInt(e.getText().replaceAll(",","")) == priceList.get(this.productIndex))
             {
                 this.scrollers.scrollToElement(e);
                 this.wait.until(d -> State.isElementEnabled(e));

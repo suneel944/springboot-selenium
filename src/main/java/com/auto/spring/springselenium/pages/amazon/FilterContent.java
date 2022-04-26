@@ -14,6 +14,12 @@ import com.auto.spring.springselenium.utility.ElementTypeConverter;
 @Component
 public class FilterContent extends Base
 {
+    @Value("${filters.categoryHeading}")
+    private String filterCategoryHeading;
+
+    @Value("${filters.categoryContentName}")
+    private String filterCategoryContentName;
+
     @Lazy
     @Autowired
     private Scrollers scrollers;
@@ -30,23 +36,24 @@ public class FilterContent extends Base
     @Autowired
     private ElementActions elementActions;
 
-    @Value("${filters.categoryHeading}")
-    private String filterCategoryHeading;
+    private By txtFilterContent()
+    {
+        return By.xpath(".//*[@id='s-refinements']//*[text()='" + this.filterCategoryHeading + "']");
+    }
 
-    @Value("${filters.categoryContentName}")
-    private String filterCategoryContentName;
-
-    private final By txtFilterContent = By.xpath(".//*[@id='s-refinements']//*[text()='"+filterCategoryHeading+"']");
-    private final By chkBoxFilterContentUnderCategory = By.xpath(".//*[@id='s-refinements']//*[text()='"+filterCategoryHeading+"']/..//following-sibling::ul//*[text()='"+filterCategoryContentName+"']");
+    private By chkBoxFilterContentUnderCategory()
+    {
+        return By.xpath(".//*[@id='s-refinements']//*[text()='"+this.filterCategoryHeading+"']/..//following-sibling::ul//*[text()='"+this.filterCategoryContentName+"']");
+    }
 
     public boolean clickOnFilterContentUnderCategory()
     {
         boolean flag = false;
         try
         {
-            this.scrollers.scrollToElement(this.elementTypeConverter.returnWebElement(txtFilterContent));
-            if (this.visibility.isElementDisplayed(this.elementTypeConverter.returnWebElement(txtFilterContent)))
-                if(this.elementActions.clickOnElement(this.elementTypeConverter.returnWebElement(chkBoxFilterContentUnderCategory)))
+            this.scrollers.scrollToElement(this.elementTypeConverter.returnWebElement(this.txtFilterContent()));
+            if (this.visibility.isElementDisplayed(this.elementTypeConverter.returnWebElement(this.txtFilterContent())))
+                if(this.elementActions.clickOnElement(this.elementTypeConverter.returnWebElement(this.chkBoxFilterContentUnderCategory())))
                     flag = true;
             return flag;
         } catch (Exception e)
@@ -58,6 +65,6 @@ public class FilterContent extends Base
     @Override
     public boolean isAt()
     {
-        return this.wait.until((d -> this.visibility.isElementDisplayed(this.elementTypeConverter.returnWebElement(this.txtFilterContent))));
+        return this.wait.until((d -> this.visibility.isElementDisplayed(this.elementTypeConverter.returnWebElement(this.txtFilterContent()))));
     }
 }

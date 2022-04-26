@@ -1,6 +1,7 @@
 package com.auto.spring.springselenium.pages.amazon;
 
 import org.openqa.selenium.By;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import com.auto.spring.springselenium.pages.Base;
 import com.auto.spring.springselenium.utility.*;
@@ -10,15 +11,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 @Component
 public class HeaderContent extends Base
 {
+    @Lazy
     @Autowired
     private Visibility visibility;
 
+    @Lazy
     @Autowired
     private ElementActions elementActions;
 
+    @Lazy
     @Autowired
     private Scrollers scrollers;
 
+    @Lazy
     @Autowired
     private ElementTypeConverter elementTypeConverter;
 

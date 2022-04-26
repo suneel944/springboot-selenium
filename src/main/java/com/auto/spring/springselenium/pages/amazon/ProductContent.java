@@ -11,6 +11,7 @@ import java.util.stream.Collectors;
 import org.openqa.selenium.WebElement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import com.auto.spring.springselenium.pages.Base;
 import com.auto.spring.springselenium.utility.State;
@@ -18,15 +19,19 @@ import com.auto.spring.springselenium.utility.State;
 @Component
 public class ProductContent extends Base
 {
+    @Lazy
     @Autowired
     private ElementTypeConverter elementTypeConverter;
 
+    @Lazy
     @Autowired
     private Scrollers scrollers;
 
+    @Lazy
     @Autowired
     private State state;
 
+    @Lazy
     @Autowired
     private ElementActions elementActions;
 

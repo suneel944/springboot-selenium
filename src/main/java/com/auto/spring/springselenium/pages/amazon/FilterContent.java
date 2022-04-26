@@ -1,6 +1,7 @@
 package com.auto.spring.springselenium.pages.amazon;
 
 import org.openqa.selenium.By;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import com.auto.spring.springselenium.pages.Base;
 import com.auto.spring.springselenium.utility.Scrollers;
@@ -13,15 +14,19 @@ import com.auto.spring.springselenium.utility.ElementTypeConverter;
 @Component
 public class FilterContent extends Base
 {
+    @Lazy
     @Autowired
     private Scrollers scrollers;
 
+    @Lazy
     @Autowired
     private ElementTypeConverter elementTypeConverter;
 
+    @Lazy
     @Autowired
     private Visibility visibility;
 
+    @Lazy
     @Autowired
     private ElementActions elementActions;
 

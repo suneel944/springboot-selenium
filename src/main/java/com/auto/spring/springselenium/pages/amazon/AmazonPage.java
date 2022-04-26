@@ -1,5 +1,6 @@
 package com.auto.spring.springselenium.pages.amazon;
 
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import com.auto.spring.springselenium.pages.Base;
 import org.springframework.beans.factory.annotation.Value;
@@ -9,14 +10,19 @@ import com.auto.spring.springselenium.utility.BrowserActions;
 @Component
 public class AmazonPage extends Base
 {
+    @Lazy
     @Autowired
     private BrowserActions browserActions;
+
+    @Lazy
     @Autowired
     private FilterContent filterContent;
 
+    @Lazy
     @Autowired
     private HeaderContent headerContent;
 
+    @Lazy
     @Autowired
     private ProductContent productContent;
 

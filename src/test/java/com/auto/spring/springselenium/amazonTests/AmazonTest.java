@@ -3,11 +3,13 @@ package com.auto.spring.springselenium.amazonTests;
 import com.auto.spring.springselenium.SpringSeleniumBaseTestNGTest;
 import com.auto.spring.springselenium.pages.amazon.AmazonPage;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class AmazonTest extends SpringSeleniumBaseTestNGTest
 {
+    @Lazy
     @Autowired
     private AmazonPage amazonPage;
 

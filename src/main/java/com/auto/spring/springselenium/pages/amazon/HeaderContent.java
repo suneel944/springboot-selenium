@@ -1,14 +1,14 @@
 package com.auto.spring.springselenium.pages.amazon;
 
 import org.openqa.selenium.By;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.stereotype.Component;
-import com.auto.spring.springselenium.pages.Base;
 import com.auto.spring.springselenium.utility.*;
+import com.auto.spring.springselenium.pages.Base;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.annotation.Autowired;
+import com.auto.spring.springselenium.annotations.PageFragment;
 
-@Component
+@PageFragment
 public class HeaderContent extends Base
 {
     @Value("${navigationFromAll.heading.subMenu.rightExtension.subMenu}")

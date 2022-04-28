@@ -1,13 +1,13 @@
 package com.auto.spring.springselenium.pages.amazon;
 
-import org.springframework.context.annotation.Lazy;
-import org.springframework.stereotype.Component;
 import com.auto.spring.springselenium.pages.Base;
+import org.springframework.context.annotation.Lazy;
+import com.auto.spring.springselenium.annotations.Page;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.beans.factory.annotation.Autowired;
 import com.auto.spring.springselenium.utility.BrowserActions;
+import org.springframework.beans.factory.annotation.Autowired;
 
-@Component
+@Page
 public class AmazonPage extends Base
 {
     @Lazy

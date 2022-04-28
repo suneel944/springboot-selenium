@@ -2,21 +2,20 @@ package com.auto.spring.springselenium.pages.amazon;
 
 import java.util.List;
 import java.util.Comparator;
-
-import com.auto.spring.springselenium.utility.ElementActions;
-import com.auto.spring.springselenium.utility.ElementTypeConverter;
-import com.auto.spring.springselenium.utility.Scrollers;
 import org.openqa.selenium.By;
 import java.util.stream.Collectors;
 import org.openqa.selenium.WebElement;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.stereotype.Component;
 import com.auto.spring.springselenium.pages.Base;
+import org.springframework.context.annotation.Lazy;
 import com.auto.spring.springselenium.utility.State;
+import com.auto.spring.springselenium.utility.Scrollers;
+import org.springframework.beans.factory.annotation.Value;
+import com.auto.spring.springselenium.utility.ElementActions;
+import org.springframework.beans.factory.annotation.Autowired;
+import com.auto.spring.springselenium.annotations.PageFragment;
+import com.auto.spring.springselenium.utility.ElementTypeConverter;
 
-@Component
+@PageFragment
 public class ProductContent extends Base
 {
     @Lazy

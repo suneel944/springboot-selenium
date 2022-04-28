@@ -1,17 +1,17 @@
 package com.auto.spring.springselenium.pages.amazon;
 
 import org.openqa.selenium.By;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.stereotype.Component;
 import com.auto.spring.springselenium.pages.Base;
+import org.springframework.context.annotation.Lazy;
 import com.auto.spring.springselenium.utility.Scrollers;
 import com.auto.spring.springselenium.utility.Visibility;
 import org.springframework.beans.factory.annotation.Value;
 import com.auto.spring.springselenium.utility.ElementActions;
 import org.springframework.beans.factory.annotation.Autowired;
+import com.auto.spring.springselenium.annotations.PageFragment;
 import com.auto.spring.springselenium.utility.ElementTypeConverter;
 
-@Component
+@PageFragment
 public class FilterContent extends Base
 {
     @Value("${filters.categoryHeading}")

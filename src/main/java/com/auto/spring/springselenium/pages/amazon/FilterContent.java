@@ -2,13 +2,12 @@ package com.auto.spring.springselenium.pages.amazon;
 
 import org.openqa.selenium.By;
 import com.auto.spring.springselenium.pages.Base;
-import org.springframework.context.annotation.Lazy;
+import org.springframework.beans.factory.annotation.Value;
 import com.auto.spring.springselenium.framework.service.Scrollers;
 import com.auto.spring.springselenium.framework.service.Visibility;
-import org.springframework.beans.factory.annotation.Value;
 import com.auto.spring.springselenium.framework.service.ElementActions;
-import org.springframework.beans.factory.annotation.Autowired;
 import com.auto.spring.springselenium.framework.annotations.PageFragment;
+import com.auto.spring.springselenium.framework.annotations.LazyAutowired;
 import com.auto.spring.springselenium.framework.service.ElementTypeConverter;
 
 @PageFragment
@@ -20,20 +19,16 @@ public class FilterContent extends Base
     @Value("${filters.categoryContentName}")
     private String filterCategoryContentName;
 
-    @Lazy
-    @Autowired
+    @LazyAutowired
     private Scrollers scrollers;
 
-    @Lazy
-    @Autowired
+    @LazyAutowired
     private ElementTypeConverter elementTypeConverter;
 
-    @Lazy
-    @Autowired
+    @LazyAutowired
     private Visibility visibility;
 
-    @Lazy
-    @Autowired
+    @LazyAutowired
     private ElementActions elementActions;
 
     private By txtFilterContent()

@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.context.ApplicationContext;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.annotation.Autowired;
+import com.auto.spring.springselenium.framework.annotations.LazyAutowired;
 
 import java.io.File;
 import java.nio.file.Path;
@@ -16,8 +17,7 @@ import java.nio.file.Path;
 @Service
 public class Screenshots
 {
-    @Lazy
-    @Autowired
+    @LazyAutowired
     private ApplicationContext ctxt;
 
     @Lazy

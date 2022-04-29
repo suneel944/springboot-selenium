@@ -2,15 +2,13 @@ package com.auto.spring.springselenium.framework.service;
 
 import org.openqa.selenium.WebDriver;
 import org.springframework.stereotype.Service;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.auto.spring.springselenium.framework.annotations.LazyAutowired;
 
 
 @Service
 public class BrowserActions
 {
-    @Lazy
-    @Autowired
+    @LazyAutowired
     private WebDriver driver;
 
     public boolean launchUrl(String url)

@@ -5,17 +5,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.beans.factory.annotation.Autowired;
-
+import com.auto.spring.springselenium.framework.annotations.LazyAutowired;
 
 import java.util.List;
 
 @Service
 public class ElementTypeConverter
 {
-    @Lazy
-    @Autowired
+    @LazyAutowired
     private WebDriver driver;
 
     public WebElement returnWebElement(By element)

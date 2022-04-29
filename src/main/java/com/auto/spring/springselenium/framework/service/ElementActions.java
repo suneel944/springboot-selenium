@@ -4,15 +4,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.JavascriptExecutor;
 import org.springframework.stereotype.Service;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.auto.spring.springselenium.framework.annotations.LazyAutowired;
 
 
 @Service
 public class ElementActions
 {
-    @Lazy
-    @Autowired
+    @LazyAutowired
     private JavascriptExecutor js;
 
     public boolean clickOnElement(WebElement element)

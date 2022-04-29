@@ -1,16 +1,14 @@
 package com.auto.spring.springselenium.amazonTests;
 
-import com.auto.spring.springselenium.SpringSeleniumBaseTestNGTest;
-import com.auto.spring.springselenium.pages.amazon.AmazonPage;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import com.auto.spring.springselenium.pages.amazon.AmazonPage;
+import com.auto.spring.springselenium.SpringSeleniumBaseTestNGTest;
+import com.auto.spring.springselenium.framework.annotations.LazyAutowired;
 
 public class AmazonTest1 extends SpringSeleniumBaseTestNGTest
 {
-    @Lazy
-    @Autowired
+    @LazyAutowired
     private AmazonPage amazonPage;
 
     @Test

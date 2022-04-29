@@ -1,29 +1,24 @@
 package com.auto.spring.springselenium.pages.amazon;
 
 import com.auto.spring.springselenium.pages.Base;
-import org.springframework.context.annotation.Lazy;
-import com.auto.spring.springselenium.framework.annotations.Page;
 import org.springframework.beans.factory.annotation.Value;
+import com.auto.spring.springselenium.framework.annotations.Page;
 import com.auto.spring.springselenium.framework.service.BrowserActions;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.auto.spring.springselenium.framework.annotations.LazyAutowired;
 
 @Page
 public class AmazonPage extends Base
 {
-    @Lazy
-    @Autowired
+    @LazyAutowired
     private BrowserActions browserActions;
 
-    @Lazy
-    @Autowired
+    @LazyAutowired
     private FilterContent filterContent;
 
-    @Lazy
-    @Autowired
+    @LazyAutowired
     private HeaderContent headerContent;
 
-    @Lazy
-    @Autowired
+    @LazyAutowired
     private ProductContent productContent;
 
     @Value("${application.url}")

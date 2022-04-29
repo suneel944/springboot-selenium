@@ -3,15 +3,13 @@ package com.auto.spring.springselenium.framework.service;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.JavascriptExecutor;
 import org.springframework.stereotype.Service;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.auto.spring.springselenium.framework.annotations.LazyAutowired;
 
 @Service
 public class State
 {
 
-    @Lazy
-    @Autowired
+    @LazyAutowired
     private JavascriptExecutor js;
 
     public static boolean isElementEnabled(WebElement element)

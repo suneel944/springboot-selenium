@@ -6,32 +6,28 @@ import org.openqa.selenium.By;
 import java.util.stream.Collectors;
 import org.openqa.selenium.WebElement;
 import com.auto.spring.springselenium.pages.Base;
-import org.springframework.context.annotation.Lazy;
+import org.springframework.beans.factory.annotation.Value;
 import com.auto.spring.springselenium.framework.service.State;
 import com.auto.spring.springselenium.framework.service.Scrollers;
-import org.springframework.beans.factory.annotation.Value;
 import com.auto.spring.springselenium.framework.service.ElementActions;
-import org.springframework.beans.factory.annotation.Autowired;
 import com.auto.spring.springselenium.framework.annotations.PageFragment;
+import com.auto.spring.springselenium.framework.annotations.LazyAutowired;
 import com.auto.spring.springselenium.framework.service.ElementTypeConverter;
+
 
 @PageFragment
 public class ProductContent extends Base
 {
-    @Lazy
-    @Autowired
+    @LazyAutowired
     private ElementTypeConverter elementTypeConverter;
 
-    @Lazy
-    @Autowired
+    @LazyAutowired
     private Scrollers scrollers;
 
-    @Lazy
-    @Autowired
+    @LazyAutowired
     private State state;
 
-    @Lazy
-    @Autowired
+    @LazyAutowired
     private ElementActions elementActions;
 
     private By pgProductSearchContent = By.xpath(".//*[@data-component-type='s-search-results']/..");

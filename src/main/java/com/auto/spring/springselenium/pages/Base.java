@@ -1,22 +1,18 @@
 package com.auto.spring.springselenium.pages;
 
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
+import com.auto.spring.springselenium.framework.annotations.LazyAutowired;
 
 import javax.annotation.PostConstruct;
 
 public abstract class Base
 {
-    @Lazy
-    @Autowired
+    @LazyAutowired
     protected WebDriver driver;
 
-    @Lazy
-    @Autowired
+    @LazyAutowired
     protected WebDriverWait wait;
 
     @PostConstruct

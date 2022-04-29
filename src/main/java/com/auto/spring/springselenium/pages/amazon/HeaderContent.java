@@ -1,11 +1,10 @@
 package com.auto.spring.springselenium.pages.amazon;
 
-import com.auto.spring.springselenium.framework.service.*;
 import org.openqa.selenium.By;
-import com.auto.spring.springselenium.utility.*;
 import com.auto.spring.springselenium.pages.Base;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.beans.factory.annotation.Value;
+import com.auto.spring.springselenium.framework.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.auto.spring.springselenium.framework.annotations.PageFragment;
 

@@ -1,28 +1,25 @@
-package com.auto.spring.springselenium.config;
+package com.auto.spring.springselenium.framework.config;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import com.auto.spring.springselenium.framework.scope.ThreadScopeBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.context.annotation.Bean;
-import com.auto.spring.springselenium.annotations.LazyConfiguration;
-import org.springframework.context.annotation.Scope;
+import com.auto.spring.springselenium.framework.annotations.LazyConfiguration;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 
 @LazyConfiguration
 public class WebDriverConfig
 {
-    @Bean
-    @Scope("browserscope")
+    @ThreadScopeBean
     @ConditionalOnProperty(name = "browser", havingValue = "firefox")
     public  WebDriver firefoxDriver(){
         WebDriverManager.firefoxdriver().setup();
         return  new FirefoxDriver();
     }
 
-    @Bean
-    @Scope("browserscope")
+    @ThreadScopeBean
     @ConditionalOnMissingBean
     public WebDriver chromeDriver(){
         WebDriverManager.chromedriver().setup();

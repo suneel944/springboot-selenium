@@ -1,9 +1,9 @@
-package com.auto.spring.springselenium.utility;
+package com.auto.spring.springselenium.framework.service;
 
 import org.openqa.selenium.WebElement;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class Visibility
 {
     public boolean isElementDisplayed(WebElement element)

@@ -2,9 +2,9 @@ package com.auto.spring.springselenium.pages.amazon;
 
 import com.auto.spring.springselenium.pages.Base;
 import org.springframework.context.annotation.Lazy;
-import com.auto.spring.springselenium.annotations.Page;
+import com.auto.spring.springselenium.framework.annotations.Page;
 import org.springframework.beans.factory.annotation.Value;
-import com.auto.spring.springselenium.utility.BrowserActions;
+import com.auto.spring.springselenium.framework.service.BrowserActions;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Page

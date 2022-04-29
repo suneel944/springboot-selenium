@@ -1,4 +1,4 @@
-package com.auto.spring.springselenium.config;
+package com.auto.spring.springselenium.framework.scope;
 
 import java.util.Objects;
 import org.openqa.selenium.remote.SessionId;

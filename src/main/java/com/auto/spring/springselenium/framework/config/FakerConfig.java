@@ -1,8 +1,8 @@
-package com.auto.spring.springselenium.config;
+package com.auto.spring.springselenium.framework.config;
 
 import com.github.javafaker.Faker;
 import org.springframework.context.annotation.Bean;
-import com.auto.spring.springselenium.annotations.LazyConfiguration;
+import com.auto.spring.springselenium.framework.annotations.LazyConfiguration;
 
 @LazyConfiguration
 public class FakerConfig

@@ -11,8 +11,8 @@
 	<groupId>com.auto.spring</groupId>
 	<artifactId>spring-selenium</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-selenium</name>
-	<description>spring selenium framework</description>
+	<name>springboot-selenium</name>
+	<description>spring boot selenium framework</description>
 	<properties>
 		<java.version>11</java.version>
 		<selenium.version>4.1.3</selenium.version>

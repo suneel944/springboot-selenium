@@ -27,17 +27,22 @@ public class Screenshots
     @Value("${screenshot.path}")
     private Path path;
 
-    public boolean takeScreenShot()
+    public boolean takeScreenshot()
     {
         try
         {
             File sourceFile = this.ctxt.getBean(TakesScreenshot.class).getScreenshotAs(OutputType.FILE);
-            FileCopyUtils.copy(sourceFile, this.path.resolve(faker.date().toString()+faker.numerify("0123456789")).toFile());
+            FileCopyUtils.copy(sourceFile, this.path.resolve(faker.date().toString()+faker.numerify("0123456789")+ ".png").toFile());
             return true;
         } catch (Exception e)
         {
             return false;
         }
+    }
+
+    public byte[] getScreenshot()
+    {
+        return this.ctxt.getBean(TakesScreenshot.class).getScreenshotAs(OutputType.BYTES);
     }
 
 }

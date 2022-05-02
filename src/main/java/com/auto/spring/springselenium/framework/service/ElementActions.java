@@ -6,7 +6,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.springframework.stereotype.Service;
 import com.auto.spring.springselenium.framework.annotations.LazyAutowired;
 
-
 @Service
 public class ElementActions
 {
@@ -86,6 +85,17 @@ public class ElementActions
         } catch (Exception e)
         {
             return false;
+        }
+    }
+
+    public String getTextFromElement(WebElement element)
+    {
+        try
+        {
+            return element.getText();
+        } catch (Exception e)
+        {
+            return null;
         }
     }
 }

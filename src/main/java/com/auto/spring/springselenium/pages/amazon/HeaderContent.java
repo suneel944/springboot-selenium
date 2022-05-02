@@ -3,7 +3,6 @@ package com.auto.spring.springselenium.pages.amazon;
 import org.openqa.selenium.By;
 import com.auto.spring.springselenium.pages.Base;
 import org.springframework.context.annotation.Lazy;
-import org.springframework.beans.factory.annotation.Value;
 import com.auto.spring.springselenium.framework.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.auto.spring.springselenium.framework.annotations.PageFragment;
@@ -11,15 +10,6 @@ import com.auto.spring.springselenium.framework.annotations.PageFragment;
 @PageFragment
 public class HeaderContent extends Base
 {
-    @Value("${navigationFromAll.heading.subMenu.rightExtension.subMenu}")
-    private String rightExtensionSubMenuName;
-
-    @Value("${navigationFromAll.heading.subMenu}")
-    private String subMenuName;
-
-    @Value("${navigationFromAll.heading}")
-    private String headingName;
-
     @Lazy
     @Autowired
     private Visibility visibility;
@@ -42,19 +32,19 @@ public class HeaderContent extends Base
 
     private By lnkAllNavigation = By.xpath(".//*[@id='nav-hamburger-menu']");
 
-    private By txtAllNavigationMenuHeadings()
+    private By txtAllNavigationMenuHeadings(String headingName)
     {
-        return By.xpath(".//*[@id='hmenu-content']//*[@class='hmenu hmenu-visible']//*[@class='hmenu-item hmenu-title '][text()='"+this.headingName+"']");
+        return By.xpath(".//*[@id='hmenu-content']//*[@class='hmenu hmenu-visible']//*[@class='hmenu-item hmenu-title '][text()='"+headingName+"']");
     };
 
-    private By lnkAllNavigationMenuHeadingSubMenu()
+    private By lnkAllNavigationMenuHeadingSubMenu(String subMenuName)
     {
-        return By.xpath(".//*[@id='hmenu-content']//*[@class='hmenu hmenu-visible']//*[@class='hmenu-item']//*[text()='"+this.subMenuName+"']");
+        return By.xpath(".//*[@id='hmenu-content']//*[@class='hmenu hmenu-visible']//*[@class='hmenu-item']//*[text()='"+subMenuName+"']");
     }
 
-    private By lnkAllNavigationMenuHeadingSubMenuRightExtensionSubMenu()
+    private By lnkAllNavigationMenuHeadingSubMenuRightExtensionSubMenu(String rightExtensionSubMenuName)
     {
-        return By.xpath(".//*[@class='hmenu hmenu-visible hmenu-translateX']//*[@class='hmenu-item'][text()='"+this.rightExtensionSubMenuName+"']");
+        return By.xpath(".//*[@class='hmenu hmenu-visible hmenu-translateX']//*[@class='hmenu-item'][text()='"+rightExtensionSubMenuName+"']");
     }
 
     public boolean clickOnAllNavigationHamburger()
@@ -63,12 +53,12 @@ public class HeaderContent extends Base
         return this.elementActions.clickOnElement(this.elementTypeConverter.returnWebElement(this.lnkAllNavigation));
     }
 
-    public boolean scrollToAllNavigationHamburgerMenuHeading()
+    public boolean scrollToAllNavigationHamburgerMenuHeading(String headingName)
     {
         try
         {
-            this.scrollers.scrollToElement(this.elementTypeConverter.returnWebElement(this.txtAllNavigationMenuHeadings()));
-            this.wait.until(d -> this.visibility.isElementDisplayed(this.elementTypeConverter.returnWebElement(this.txtAllNavigationMenuHeadings())));
+            this.scrollers.scrollToElement(this.elementTypeConverter.returnWebElement(this.txtAllNavigationMenuHeadings(headingName)));
+            this.wait.until(d -> this.visibility.isElementDisplayed(this.elementTypeConverter.returnWebElement(this.txtAllNavigationMenuHeadings(headingName))));
             return true;
         } catch (Exception e)
         {
@@ -76,24 +66,24 @@ public class HeaderContent extends Base
         }
     }
 
-    public boolean clickOnAllNavigationHamburgerMenuHeadingSubMenu()
+    public boolean clickOnAllNavigationHamburgerMenuHeadingSubMenu(String subMenuName)
     {
         try
         {
-            this.wait.until(d -> State.isElementEnabled(this.elementTypeConverter.returnWebElement(this.lnkAllNavigationMenuHeadingSubMenu())));
-            return this.elementActions.clickOnElement(this.elementTypeConverter.returnWebElement(this.lnkAllNavigationMenuHeadingSubMenu()));
+            this.wait.until(d -> State.isElementEnabled(this.elementTypeConverter.returnWebElement(this.lnkAllNavigationMenuHeadingSubMenu(subMenuName))));
+            return this.elementActions.clickOnElement(this.elementTypeConverter.returnWebElement(this.lnkAllNavigationMenuHeadingSubMenu(subMenuName)));
         } catch (Exception e)
         {
             return false;
         }
     }
 
-    public boolean clickOnAllNavigationHamburgerMenuHeadingSubMenuRightExtensionSubMenu()
+    public boolean clickOnAllNavigationHamburgerMenuHeadingSubMenuRightExtensionSubMenu(String rightExtensionSubMenuName)
     {
         try
         {
-            this.wait.until(d -> State.isElementEnabled(this.elementTypeConverter.returnWebElement(this.lnkAllNavigationMenuHeadingSubMenuRightExtensionSubMenu())));
-            return this.elementActions.clickOnElement(this.elementTypeConverter.returnWebElement(this.lnkAllNavigationMenuHeadingSubMenuRightExtensionSubMenu()));
+            this.wait.until(d -> State.isElementEnabled(this.elementTypeConverter.returnWebElement(this.lnkAllNavigationMenuHeadingSubMenuRightExtensionSubMenu(rightExtensionSubMenuName))));
+            return this.elementActions.clickOnElement(this.elementTypeConverter.returnWebElement(this.lnkAllNavigationMenuHeadingSubMenuRightExtensionSubMenu(rightExtensionSubMenuName)));
         } catch (Exception e)
         {
             return false;
@@ -101,7 +91,7 @@ public class HeaderContent extends Base
     }
 
     @Override
-    public boolean isAt()
+    public boolean isAt(String... args)
     {
         return this.wait.until(d -> State.isElementEnabled(this.elementTypeConverter.returnWebElement(this.edtSearchField)));
     }

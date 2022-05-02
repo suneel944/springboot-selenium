@@ -11,23 +11,53 @@ public class Scrollers
     @LazyAutowired
     private JavascriptExecutor js;
 
-    public void scrollToElement(WebElement element)
+    public boolean scrollToElement(WebElement element)
     {
-        js.executeScript("arguments[0].scrollIntoView();",element);
+        try
+        {
+            js.executeScript("arguments[0].scrollIntoView();", element);
+            return true;
+        } catch (Exception e)
+        {
+            return false;
+        }
     }
 
-    public void scrollToCoordinates(String x, String y)
+    public boolean scrollToCoordinates(String x, String y)
     {
-        js.executeScript("window.scrollBy("+x+","+y+")");
+        try
+        {
+            js.executeScript("window.scrollBy(" + x + "," + y + ")");
+            return true;
+        } catch (Exception e)
+        {
+            return false;
+        }
+
     }
 
-    public void scrollVertically(String pixelOffset)
+    public boolean scrollVertically(String pixelOffset)
     {
-        js.executeScript("window.scrollBy(0,"+pixelOffset+")");
+        try
+        {
+            js.executeScript("window.scrollBy(0,"+pixelOffset+")");
+            return true;
+        } catch (Exception e)
+        {
+            return false;
+        }
+
     }
 
-    public void scrollToBottomPage()
+    public boolean scrollToBottomPage()
     {
-        js.executeScript("window.scrollBy(0,document.body.scrollHeight");
+        try
+        {
+            js.executeScript("window.scrollBy(0,document.body.scrollHeight");
+            return true;
+        } catch (Exception e)
+        {
+            return false;
+        }
     }
 }

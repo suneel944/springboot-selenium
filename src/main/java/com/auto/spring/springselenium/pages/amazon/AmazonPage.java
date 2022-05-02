@@ -1,16 +1,19 @@
 package com.auto.spring.springselenium.pages.amazon;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.auto.spring.springselenium.pages.Base;
 import org.springframework.beans.factory.annotation.Value;
 import com.auto.spring.springselenium.framework.annotations.Page;
-import com.auto.spring.springselenium.framework.service.BrowserActions;
+import com.auto.spring.springselenium.framework.service.Launcher;
 import com.auto.spring.springselenium.framework.annotations.LazyAutowired;
 
 @Page
 public class AmazonPage extends Base
 {
+    private static final Logger logger = LoggerFactory.getLogger(AmazonPage.class);
     @LazyAutowired
-    private BrowserActions browserActions;
+    private Launcher launcher;
 
     @LazyAutowired
     private FilterContent filterContent;
@@ -26,7 +29,7 @@ public class AmazonPage extends Base
 
     public boolean goTo()
     {
-        return this.browserActions.launchUrl(url);
+        return this.launcher.launchUrl(url);
     }
 
     public FilterContent getFilterContent()
@@ -45,7 +48,7 @@ public class AmazonPage extends Base
     }
 
     @Override
-    public boolean isAt()
+    public boolean isAt(String... args)
     {
         /*delegating to header content*/
         return this.wait.until(d -> this.headerContent.isAt());

@@ -4,11 +4,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import com.auto.spring.springselenium.framework.scope.ThreadScopeBean;
+import org.springframework.context.annotation.Profile;
+import com.auto.spring.springselenium.framework.annotations.ThreadScopeBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import com.auto.spring.springselenium.framework.annotations.LazyConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 
+@Profile("!remote")
 @LazyConfiguration
 public class WebDriverConfig
 {

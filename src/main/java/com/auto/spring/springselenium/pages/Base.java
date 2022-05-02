@@ -22,5 +22,5 @@ public abstract class Base
     }
 
     /*each page object has to implement this*/
-    public abstract boolean isAt();
+    public abstract boolean isAt(String... args);
 }

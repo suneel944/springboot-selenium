@@ -6,14 +6,12 @@ import org.openqa.selenium.By;
 import java.util.stream.Collectors;
 import org.openqa.selenium.WebElement;
 import com.auto.spring.springselenium.pages.Base;
-import org.springframework.beans.factory.annotation.Value;
 import com.auto.spring.springselenium.framework.service.State;
 import com.auto.spring.springselenium.framework.service.Scrollers;
 import com.auto.spring.springselenium.framework.service.ElementActions;
 import com.auto.spring.springselenium.framework.annotations.PageFragment;
 import com.auto.spring.springselenium.framework.annotations.LazyAutowired;
 import com.auto.spring.springselenium.framework.service.ElementTypeConverter;
-
 
 @PageFragment
 public class ProductContent extends Base
@@ -34,10 +32,7 @@ public class ProductContent extends Base
 
     private By weProductCardPrices = By.xpath("//span[@class='a-price-whole']");
 
-    @Value("${nthHighestProduct.index:1}")
-    private Integer productIndex;
-
-    public boolean clickOnTheNthHighestPricedProduct()
+    public boolean clickOnTheNthHighestPricedProduct(Integer productIndex)
     {
         List<WebElement> elements = this.elementTypeConverter.returnWebElements(this.weProductCardPrices);
         /*remove sponsored product adds from the list as they are not visible in the UI*/
@@ -48,11 +43,11 @@ public class ProductContent extends Base
         for (WebElement e: elements
              )
         {
-            if (Integer.parseInt(e.getText().replaceAll(",","")) == priceList.get(this.productIndex))
+            if (Integer.parseInt(e.getText().replaceAll(",","")) == priceList.get(productIndex))
             {
                 this.scrollers.scrollToElement(e);
                 this.wait.until(d -> State.isElementEnabled(e));
-                return this.elementActions.clickOnElement(e);
+                return this.elementActions.clickOnElementUsingJs(e);
             }
         }
         return false;
@@ -60,7 +55,7 @@ public class ProductContent extends Base
 
 
     @Override
-    public boolean isAt()
+    public boolean isAt(String... args)
     {
         return this.wait.until(d -> this.state.isPageLoaded());
     }

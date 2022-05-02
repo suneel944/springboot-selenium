@@ -1,4 +1,4 @@
-package com.auto.spring.springselenium.framework.scope;
+package com.auto.spring.springselenium.framework.annotations;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;

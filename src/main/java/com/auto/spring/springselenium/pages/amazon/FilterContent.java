@@ -2,7 +2,6 @@ package com.auto.spring.springselenium.pages.amazon;
 
 import org.openqa.selenium.By;
 import com.auto.spring.springselenium.pages.Base;
-import org.springframework.beans.factory.annotation.Value;
 import com.auto.spring.springselenium.framework.service.Scrollers;
 import com.auto.spring.springselenium.framework.service.Visibility;
 import com.auto.spring.springselenium.framework.service.ElementActions;
@@ -13,12 +12,6 @@ import com.auto.spring.springselenium.framework.service.ElementTypeConverter;
 @PageFragment
 public class FilterContent extends Base
 {
-    @Value("${filters.categoryHeading}")
-    private String filterCategoryHeading;
-
-    @Value("${filters.categoryContentName}")
-    private String filterCategoryContentName;
-
     @LazyAutowired
     private Scrollers scrollers;
 
@@ -31,24 +24,24 @@ public class FilterContent extends Base
     @LazyAutowired
     private ElementActions elementActions;
 
-    private By txtFilterContent()
+    private By txtFilterContent(String filterCategoryHeading)
     {
-        return By.xpath(".//*[@id='s-refinements']//*[text()='" + this.filterCategoryHeading + "']");
+        return By.xpath(".//*[@id='s-refinements']//*[text()='" + filterCategoryHeading + "']");
     }
 
-    private By chkBoxFilterContentUnderCategory()
+    private By chkBoxFilterContentUnderCategory(String filterCategoryHeading, String filterCategoryContentName)
     {
-        return By.xpath(".//*[@id='s-refinements']//*[text()='"+this.filterCategoryHeading+"']/..//following-sibling::ul//*[text()='"+this.filterCategoryContentName+"']");
+        return By.xpath(".//*[@id='s-refinements']//*[text()='"+ filterCategoryHeading+"']/..//following-sibling::ul//*[text()='"+filterCategoryContentName+"']");
     }
 
-    public boolean clickOnFilterContentUnderCategory()
+    public boolean clickOnFilterContentUnderCategory(String filterCategoryHeading, String filterCategoryContentName)
     {
         boolean flag = false;
         try
         {
-            this.scrollers.scrollToElement(this.elementTypeConverter.returnWebElement(this.txtFilterContent()));
-            if (this.visibility.isElementDisplayed(this.elementTypeConverter.returnWebElement(this.txtFilterContent())))
-                if(this.elementActions.clickOnElement(this.elementTypeConverter.returnWebElement(this.chkBoxFilterContentUnderCategory())))
+            this.scrollers.scrollToElement(this.elementTypeConverter.returnWebElement(this.txtFilterContent(filterCategoryHeading)));
+            if (this.visibility.isElementDisplayed(this.elementTypeConverter.returnWebElement(this.txtFilterContent(filterCategoryHeading))))
+                if(this.elementActions.clickOnElement(this.elementTypeConverter.returnWebElement(this.chkBoxFilterContentUnderCategory(filterCategoryHeading, filterCategoryContentName))))
                     flag = true;
             return flag;
         } catch (Exception e)
@@ -58,8 +51,8 @@ public class FilterContent extends Base
     }
 
     @Override
-    public boolean isAt()
+    public boolean isAt(String... args)
     {
-        return this.wait.until((d -> this.visibility.isElementDisplayed(this.elementTypeConverter.returnWebElement(this.txtFilterContent()))));
+        return this.wait.until((d -> this.visibility.isElementDisplayed(this.elementTypeConverter.returnWebElement(this.txtFilterContent(args[0])))));
     }
 }

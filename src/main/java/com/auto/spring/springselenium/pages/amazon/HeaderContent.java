@@ -2,29 +2,27 @@ package com.auto.spring.springselenium.pages.amazon;
 
 import org.openqa.selenium.By;
 import com.auto.spring.springselenium.pages.Base;
-import org.springframework.context.annotation.Lazy;
 import com.auto.spring.springselenium.framework.service.*;
-import org.springframework.beans.factory.annotation.Autowired;
 import com.auto.spring.springselenium.framework.annotations.PageFragment;
+import com.auto.spring.springselenium.framework.annotations.LazyAutowired;
 
 @PageFragment
 public class HeaderContent extends Base
 {
-    @Lazy
-    @Autowired
+    @LazyAutowired
     private Visibility visibility;
 
-    @Lazy
-    @Autowired
+    @LazyAutowired
     private ElementActions elementActions;
 
-    @Lazy
-    @Autowired
+    @LazyAutowired
     private Scrollers scrollers;
 
-    @Lazy
-    @Autowired
+    @LazyAutowired
     private ElementTypeConverter elementTypeConverter;
+
+    @LazyAutowired
+    private State state;
 
     private By edtSearchField = By.xpath(".//*[@id='twotabsearchtextbox']");
 
@@ -44,12 +42,12 @@ public class HeaderContent extends Base
 
     private By lnkAllNavigationMenuHeadingSubMenuRightExtensionSubMenu(String rightExtensionSubMenuName)
     {
-        return By.xpath(".//*[@class='hmenu hmenu-visible hmenu-translateX']//*[@class='hmenu-item'][text()='"+rightExtensionSubMenuName+"']");
+        return By.xpath(".//*[@class='hmenu-item'][text()='"+rightExtensionSubMenuName+"']");
     }
 
     public boolean clickOnAllNavigationHamburger()
     {
-        this.wait.until(d-> State.isElementEnabled(this.elementTypeConverter.returnWebElement(this.lnkAllNavigation)));
+        this.wait.until(d-> this.state.isElementClickable(this.elementTypeConverter.returnWebElement(this.lnkAllNavigation)));
         return this.elementActions.clickOnElement(this.elementTypeConverter.returnWebElement(this.lnkAllNavigation));
     }
 
@@ -70,7 +68,7 @@ public class HeaderContent extends Base
     {
         try
         {
-            this.wait.until(d -> State.isElementEnabled(this.elementTypeConverter.returnWebElement(this.lnkAllNavigationMenuHeadingSubMenu(subMenuName))));
+            this.wait.until(d -> this.state.isElementClickable(this.elementTypeConverter.returnWebElement(this.lnkAllNavigationMenuHeadingSubMenu(subMenuName))));
             return this.elementActions.clickOnElement(this.elementTypeConverter.returnWebElement(this.lnkAllNavigationMenuHeadingSubMenu(subMenuName)));
         } catch (Exception e)
         {
@@ -82,7 +80,7 @@ public class HeaderContent extends Base
     {
         try
         {
-            this.wait.until(d -> State.isElementEnabled(this.elementTypeConverter.returnWebElement(this.lnkAllNavigationMenuHeadingSubMenuRightExtensionSubMenu(rightExtensionSubMenuName))));
+            this.wait.until(d -> this.state.isElementClickable(this.elementTypeConverter.returnWebElement(this.lnkAllNavigationMenuHeadingSubMenuRightExtensionSubMenu(rightExtensionSubMenuName))));
             return this.elementActions.clickOnElement(this.elementTypeConverter.returnWebElement(this.lnkAllNavigationMenuHeadingSubMenuRightExtensionSubMenu(rightExtensionSubMenuName)));
         } catch (Exception e)
         {
@@ -93,6 +91,6 @@ public class HeaderContent extends Base
     @Override
     public boolean isAt(String... args)
     {
-        return this.wait.until(d -> State.isElementEnabled(this.elementTypeConverter.returnWebElement(this.edtSearchField)));
+        return this.wait.until(d -> this.state.isElementClickable(this.elementTypeConverter.returnWebElement(this.edtSearchField)));
     }
 }

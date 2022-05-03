@@ -1,13 +1,10 @@
 package com.auto.spring.springselenium.pages.amazon;
 
+import com.auto.spring.springselenium.framework.service.*;
 import org.openqa.selenium.By;
 import com.auto.spring.springselenium.pages.Base;
-import com.auto.spring.springselenium.framework.service.Scrollers;
-import com.auto.spring.springselenium.framework.service.Visibility;
-import com.auto.spring.springselenium.framework.service.ElementActions;
 import com.auto.spring.springselenium.framework.annotations.PageFragment;
 import com.auto.spring.springselenium.framework.annotations.LazyAutowired;
-import com.auto.spring.springselenium.framework.service.ElementTypeConverter;
 
 @PageFragment
 public class FilterContent extends Base
@@ -20,6 +17,9 @@ public class FilterContent extends Base
 
     @LazyAutowired
     private Visibility visibility;
+
+    @LazyAutowired
+    private State state;
 
     @LazyAutowired
     private ElementActions elementActions;
@@ -53,6 +53,6 @@ public class FilterContent extends Base
     @Override
     public boolean isAt(String... args)
     {
-        return this.wait.until((d -> this.visibility.isElementDisplayed(this.elementTypeConverter.returnWebElement(this.txtFilterContent(args[0])))));
+        return this.wait.until(d -> this.state.isPageLoaded());
     }
 }

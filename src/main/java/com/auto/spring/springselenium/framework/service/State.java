@@ -1,24 +1,30 @@
 package com.auto.spring.springselenium.framework.service;
 
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.JavascriptExecutor;
-import org.springframework.stereotype.Service;
+import com.auto.spring.springselenium.framework.annotations.LazyService;
 import com.auto.spring.springselenium.framework.annotations.LazyAutowired;
 
-@Service
+@LazyService
+@Log4j2
 public class State
 {
-
     @LazyAutowired
     private JavascriptExecutor js;
 
-    public static boolean isElementEnabled(WebElement element)
+    public boolean isElementEnabled(WebElement element)
     {
         try
         {
-            return element.isEnabled();
+            log.info("verifying whether element is enabled");
+            boolean result = element.isEnabled();
+            log.info("verified: element is {}", result?"enabled": "not enabled");
+            return result;
         } catch (Exception e)
         {
+            log.error("failed to verify element is enabled {}", e.getMessage());
+            log.debug("caught {}", e);
             return false;
         }
     }
@@ -27,9 +33,14 @@ public class State
     {
         try
         {
-            return element.isDisplayed() && element.isEnabled();
+            log.info("verifying whether element is clickable");
+            boolean result = element.isDisplayed() && element.isEnabled();
+            log.info("verified: element is {}", result?"clickable": "not clickable");
+            return result;
         } catch (Exception e)
         {
+            log.error("failed to verify element is clickable {}", e.getMessage());
+            log.debug("caught {}", e);
             return false;
         }
     }
@@ -38,9 +49,14 @@ public class State
     {
         try
         {
-            return this.js.executeScript("return document.readyState").equals("complete");
+            log.info("verifying if page load is completed");
+            boolean result = this.js.executeScript("return document.readyState").equals("complete");
+            log.info("verified: page load is {}", result?"completed":"not completed");
+            return result;
         } catch (Exception e)
         {
+            log.error("failed to verify if page load is completed {}", e.getMessage());
+            log.debug("caught {}", e);
             return false;
         }
     }

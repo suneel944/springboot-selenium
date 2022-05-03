@@ -1,6 +1,5 @@
-package com.auto.spring.springselenium.framework.config;
+package com.auto.spring.springselenium.framework.beans;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -12,18 +11,18 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 
 @Profile("!remote")
 @LazyConfiguration
-public class WebDriverConfig
+public class WebDriverBean
 {
     @ThreadScopeBean
     @ConditionalOnProperty(name = "browser", havingValue = "firefox")
-    public  WebDriver firefoxDriver(){
+    public org.openqa.selenium.WebDriver firefoxDriver(){
         WebDriverManager.firefoxdriver().setup();
         return  new FirefoxDriver();
     }
 
     @ThreadScopeBean
     @ConditionalOnMissingBean
-    public WebDriver chromeDriver(){
+    public org.openqa.selenium.WebDriver chromeDriver(){
         WebDriverManager.chromedriver().setup();
         return new ChromeDriver();
     }

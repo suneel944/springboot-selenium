@@ -11,7 +11,7 @@ import com.auto.spring.springselenium.framework.annotations.LazyAutowired;
 @Page
 public class AmazonPage extends Base
 {
-    private static final Logger logger = LoggerFactory.getLogger(AmazonPage.class);
+    private Logger logger = LoggerFactory.getLogger(AmazonPage.class);
     @LazyAutowired
     private Launcher launcher;
 

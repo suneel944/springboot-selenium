@@ -46,13 +46,12 @@ public class ProductContent extends Base
             if (Integer.parseInt(e.getText().replaceAll(",","")) == priceList.get(productIndex))
             {
                 this.scrollers.scrollToElement(e);
-                this.wait.until(d -> State.isElementEnabled(e));
+                this.wait.until(d -> this.state.isElementEnabled(e));
                 return this.elementActions.clickOnElementUsingJs(e);
             }
         }
         return false;
     }
-
 
     @Override
     public boolean isAt(String... args)

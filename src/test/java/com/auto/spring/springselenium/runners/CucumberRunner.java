@@ -1,11 +1,11 @@
-package com.auto.spring.springselenium;
+package com.auto.spring.springselenium.runners;
 
 import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.DataProvider;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 
 @CucumberOptions(
-        features = "classpath:features",
+        features = "src/test/java/com/auto/spring/springselenium/bdd/features",
         glue = "com.auto.spring.springselenium.bdd",
         plugin = {
                 "pretty",

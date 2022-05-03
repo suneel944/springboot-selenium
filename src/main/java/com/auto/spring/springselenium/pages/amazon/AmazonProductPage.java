@@ -1,13 +1,13 @@
 package com.auto.spring.springselenium.pages.amazon;
 
-import com.auto.spring.springselenium.framework.service.*;
 import org.openqa.selenium.By;
 import com.auto.spring.springselenium.pages.Base;
+import com.auto.spring.springselenium.framework.service.*;
 import com.auto.spring.springselenium.framework.annotations.Window;
 import com.auto.spring.springselenium.framework.annotations.LazyAutowired;
 import com.auto.spring.springselenium.framework.annotations.TakeScreenshot;
 
-@Window("@Value(${filters.categoryContentName})")
+@Window("Samsung")
 public class AmazonProductPage extends Base
 {
     @LazyAutowired

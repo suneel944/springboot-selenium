@@ -23,6 +23,7 @@ public class AmazonSteps
         public void launchSite()
         {
                 this.amazonPage.goTo();
+                this.amazonPage.isAt();
         }
         @When("^I select \"([^\"]*)\" right extension submenu from \"([^\"]*)\" heading's \"([^\"]*)\" submenu's$")
         public void clickOnAllNavigationHamburgerMenuHeadingSubMenuRightExtensionSubMenu(String rightExtensionSubMenuName, String headingName, String subMenuName)
@@ -35,6 +36,7 @@ public class AmazonSteps
         @And("^I filter for \"([^\"]*)\" product under \"([^\"]*)\" category$")
         public void clickOnFilterContentUnderCategory(String filterCategoryContentName, String filterCategoryHeading)
         {
+                this.amazonPage.getFilterContent().isAt();
                 this.amazonPage.getFilterContent().clickOnFilterContentUnderCategory(filterCategoryHeading, filterCategoryContentName);
         }
         @Then("^I should see \"([^\"]*)\" brand products$")

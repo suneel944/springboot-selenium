@@ -1,11 +1,12 @@
 package com.auto.spring.springselenium.framework.service;
 
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;
-import org.springframework.stereotype.Service;
+import com.auto.spring.springselenium.framework.annotations.LazyService;
 import com.auto.spring.springselenium.framework.annotations.LazyAutowired;
 
-
-@Service
+@LazyService
+@Log4j2
 public class Launcher
 {
     @LazyAutowired
@@ -15,10 +16,14 @@ public class Launcher
     {
         try
         {
+            log.info("launching url {}", url);
             this.driver.get(url);
+            log.info("launched url {}", url);
             return true;
         } catch (Exception e)
         {
+            log.error("failed to launch url {} : {}", url, e.getMessage());
+            log.debug("caught {}", e);
             return false;
         }
     }

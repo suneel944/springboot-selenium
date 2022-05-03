@@ -2,6 +2,8 @@ package com.auto.spring.springselenium.framework.service;
 
 import java.io.File;
 import java.nio.file.Path;
+import java.util.Date;
+
 import com.github.javafaker.Faker;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.OutputType;
@@ -34,7 +36,9 @@ public class Screenshots
         {
             log.info("taking screenshot");
             File sourceFile = this.ctxt.getBean(TakesScreenshot.class).getScreenshotAs(OutputType.FILE);
-            FileCopyUtils.copy(sourceFile, this.path.resolve((testName+faker.date().toString()+faker.numerify("0123456789"))+ ".png").toFile());
+            Date now = new Date();
+            long ut = now.getTime() / 100L;
+            FileCopyUtils.copy(sourceFile, this.path.resolve((testName+"_"+String.valueOf(ut)+".png")).toFile());
             log.info("took screenshot");
             return true;
         } catch (Exception e)

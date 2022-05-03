@@ -17,7 +17,7 @@ public class ScreenshotAspect
     @Autowired
     private Screenshots screenshots;
 
-    @After("@target(takeScreenshot) && within(com.auto.spring.springselenium..*)")
+    @After("@annotation(takeScreenshot)")
     public void after(JoinPoint jointPoint, TakeScreenshot takeScreenshot)
     {
         log.info("taking screenshot");

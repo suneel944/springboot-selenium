@@ -1,0 +1,95 @@
+2022-05-04 06:36:00,827 INFO o.s.b.StartupInfoLogger [TestNG-PoolService-0] Starting AmazonSteps using Java 11.0.14.1 on Suneels-MacBook-Pro.local with PID 52682 (/Users/biofourmis/IdeaProjects/spring-selenium/target/test-classes started by biofourmis in /Users/biofourmis/IdeaProjects/spring-selenium)
+2022-05-04 06:36:00,830 DEBUG o.s.b.StartupInfoLogger [TestNG-PoolService-0] Running with Spring Boot v2.6.7, Spring v5.3.19
+2022-05-04 06:36:00,831 INFO o.s.b.SpringApplication [TestNG-PoolService-0] No active profile set, falling back to 1 default profile: "default"
+2022-05-04 06:36:01,823 INFO o.s.b.StartupInfoLogger [TestNG-PoolService-0] Started AmazonSteps in 1.354 seconds (JVM running for 3.978)
+2022-05-04 06:36:02,435 INFO c.a.s.s.f.s.Launcher [TestNG-PoolService-0] launching url https://www.amazon.in
+2022-05-04 06:36:02,836 INFO i.g.b.w.WebDriverManager [TestNG-PoolService-0] Using chromedriver 100.0.4896.60 (resolved driver for Chrome 100)
+2022-05-04 06:36:02,864 INFO i.g.b.w.WebDriverManager [TestNG-PoolService-0] Exporting webdriver.chrome.driver as /Users/biofourmis/.cache/selenium/chromedriver/mac64/100.0.4896.60/chromedriver
+2022-05-04 06:36:05,215 INFO o.o.s.r.ProtocolHandshake [Forwarding newSession on session null to remote] Detected dialect: W3C
+2022-05-04 06:36:05,320 WARN o.o.s.d.CdpVersionFinder [TestNG-PoolService-0] Unable to find an exact match for CDP version 100, so returning the closest version found: 99
+2022-05-04 06:36:05,324 INFO o.o.s.d.CdpVersionFinder [TestNG-PoolService-0] Found CDP implementation for version 100 of 99
+2022-05-04 06:36:06,708 INFO c.a.s.s.f.s.Launcher [TestNG-PoolService-0] launched url https://www.amazon.in
+2022-05-04 06:36:06,861 INFO c.a.s.s.f.s.ElementTypeConverter [TestNG-PoolService-0] converting by locator to web element
+2022-05-04 06:36:07,013 INFO c.a.s.s.f.s.ElementTypeConverter [TestNG-PoolService-0] converted by locator to web element
+2022-05-04 06:36:07,035 INFO c.a.s.s.f.s.State [TestNG-PoolService-0] verifying whether element is clickable
+2022-05-04 06:36:07,092 INFO c.a.s.s.f.s.State [TestNG-PoolService-0] verified: element is clickable
+2022-05-04 06:36:07,122 INFO c.a.s.s.f.s.ElementTypeConverter [TestNG-PoolService-0] converting by locator to web element
+2022-05-04 06:36:07,137 INFO c.a.s.s.f.s.ElementTypeConverter [TestNG-PoolService-0] converted by locator to web element
+2022-05-04 06:36:07,138 INFO c.a.s.s.f.s.State [TestNG-PoolService-0] verifying whether element is clickable
+2022-05-04 06:36:07,177 INFO c.a.s.s.f.s.State [TestNG-PoolService-0] verified: element is clickable
+2022-05-04 06:36:07,177 INFO c.a.s.s.f.s.ElementTypeConverter [TestNG-PoolService-0] converting by locator to web element
+2022-05-04 06:36:07,186 INFO c.a.s.s.f.s.ElementTypeConverter [TestNG-PoolService-0] converted by locator to web element
+2022-05-04 06:36:07,199 INFO c.a.s.s.f.s.ElementActions [TestNG-PoolService-0] clicking on element
+2022-05-04 06:36:07,996 INFO c.a.s.s.f.s.ElementActions [TestNG-PoolService-0] clicked on element
+2022-05-04 06:36:08,002 INFO c.a.s.s.f.s.ElementTypeConverter [TestNG-PoolService-0] converting by locator to web element
+2022-05-04 06:36:08,016 INFO c.a.s.s.f.s.ElementTypeConverter [TestNG-PoolService-0] converted by locator to web element
+2022-05-04 06:36:08,028 INFO c.a.s.s.f.s.Scrollers [TestNG-PoolService-0] scrolling to element
+2022-05-04 06:36:08,036 INFO c.a.s.s.f.s.Scrollers [TestNG-PoolService-0] scrolled to element
+2022-05-04 06:36:08,037 INFO c.a.s.s.f.s.ElementTypeConverter [TestNG-PoolService-0] converting by locator to web element
+2022-05-04 06:36:08,047 INFO c.a.s.s.f.s.ElementTypeConverter [TestNG-PoolService-0] converted by locator to web element
+2022-05-04 06:36:08,059 INFO c.a.s.s.f.s.Visibility [TestNG-PoolService-0] verifying whether element is displayed
+2022-05-04 06:36:08,072 INFO c.a.s.s.f.s.Visibility [TestNG-PoolService-0] verified: element is displayed
+2022-05-04 06:36:08,076 INFO c.a.s.s.f.s.ElementTypeConverter [TestNG-PoolService-0] converting by locator to web element
+2022-05-04 06:36:08,088 INFO c.a.s.s.f.s.ElementTypeConverter [TestNG-PoolService-0] converted by locator to web element
+2022-05-04 06:36:08,089 INFO c.a.s.s.f.s.State [TestNG-PoolService-0] verifying whether element is clickable
+2022-05-04 06:36:08,111 INFO c.a.s.s.f.s.State [TestNG-PoolService-0] verified: element is clickable
+2022-05-04 06:36:08,111 INFO c.a.s.s.f.s.ElementTypeConverter [TestNG-PoolService-0] converting by locator to web element
+2022-05-04 06:36:08,121 INFO c.a.s.s.f.s.ElementTypeConverter [TestNG-PoolService-0] converted by locator to web element
+2022-05-04 06:36:08,122 INFO c.a.s.s.f.s.ElementActions [TestNG-PoolService-0] clicking on element
+2022-05-04 06:36:08,196 INFO c.a.s.s.f.s.ElementActions [TestNG-PoolService-0] clicked on element
+2022-05-04 06:36:08,204 INFO c.a.s.s.f.s.ElementTypeConverter [TestNG-PoolService-0] converting by locator to web element
+2022-05-04 06:36:08,231 INFO c.a.s.s.f.s.ElementTypeConverter [TestNG-PoolService-0] converted by locator to web element
+2022-05-04 06:36:08,234 INFO c.a.s.s.f.s.State [TestNG-PoolService-0] verifying whether element is clickable
+2022-05-04 06:36:08,289 INFO c.a.s.s.f.s.State [TestNG-PoolService-0] verified: element is clickable
+2022-05-04 06:36:08,290 INFO c.a.s.s.f.s.ElementTypeConverter [TestNG-PoolService-0] converting by locator to web element
+2022-05-04 06:36:08,312 INFO c.a.s.s.f.s.ElementTypeConverter [TestNG-PoolService-0] converted by locator to web element
+2022-05-04 06:36:08,313 INFO c.a.s.s.f.s.ElementActions [TestNG-PoolService-0] clicking on element
+2022-05-04 06:36:09,189 INFO c.a.s.s.f.s.ElementActions [TestNG-PoolService-0] clicked on element
+2022-05-04 06:36:09,211 INFO c.a.s.s.f.s.State [TestNG-PoolService-0] verifying if page load is completed
+2022-05-04 06:36:09,238 INFO c.a.s.s.f.s.State [TestNG-PoolService-0] verified: page load is not completed
+2022-05-04 06:36:09,743 INFO c.a.s.s.f.s.State [TestNG-PoolService-0] verifying if page load is completed
+2022-05-04 06:36:10,093 INFO c.a.s.s.f.s.State [TestNG-PoolService-0] verified: page load is not completed
+2022-05-04 06:36:10,596 INFO c.a.s.s.f.s.State [TestNG-PoolService-0] verifying if page load is completed
+2022-05-04 06:36:10,608 INFO c.a.s.s.f.s.State [TestNG-PoolService-0] verified: page load is completed
+2022-05-04 06:36:10,612 INFO c.a.s.s.f.s.ElementTypeConverter [TestNG-PoolService-0] converting by locator to web element
+2022-05-04 06:36:10,637 INFO c.a.s.s.f.s.ElementTypeConverter [TestNG-PoolService-0] converted by locator to web element
+2022-05-04 06:36:10,638 INFO c.a.s.s.f.s.Scrollers [TestNG-PoolService-0] scrolling to element
+2022-05-04 06:36:10,645 INFO c.a.s.s.f.s.Scrollers [TestNG-PoolService-0] scrolled to element
+2022-05-04 06:36:10,645 INFO c.a.s.s.f.s.ElementTypeConverter [TestNG-PoolService-0] converting by locator to web element
+2022-05-04 06:36:10,791 INFO c.a.s.s.f.s.ElementTypeConverter [TestNG-PoolService-0] converted by locator to web element
+2022-05-04 06:36:10,791 INFO c.a.s.s.f.s.Visibility [TestNG-PoolService-0] verifying whether element is displayed
+2022-05-04 06:36:10,810 INFO c.a.s.s.f.s.Visibility [TestNG-PoolService-0] verified: element is displayed
+2022-05-04 06:36:10,827 INFO c.a.s.s.f.s.ElementTypeConverter [TestNG-PoolService-0] converting by locator to web element
+2022-05-04 06:36:10,894 INFO c.a.s.s.f.s.ElementTypeConverter [TestNG-PoolService-0] converted by locator to web element
+2022-05-04 06:36:10,895 INFO c.a.s.s.f.s.ElementActions [TestNG-PoolService-0] clicking on element
+2022-05-04 06:36:12,659 INFO c.a.s.s.f.s.ElementActions [TestNG-PoolService-0] clicked on element
+2022-05-04 06:36:12,675 INFO c.a.s.s.f.s.State [TestNG-PoolService-0] verifying if page load is completed
+2022-05-04 06:36:12,681 INFO c.a.s.s.f.s.State [TestNG-PoolService-0] verified: page load is completed
+2022-05-04 06:36:12,688 INFO c.a.s.s.f.s.ElementTypeConverter [TestNG-PoolService-0] converting by locator to web elements
+2022-05-04 06:36:12,719 INFO c.a.s.s.f.s.ElementTypeConverter [TestNG-PoolService-0] converted by locator to web elements
+2022-05-04 06:36:13,292 INFO c.a.s.s.f.s.Scrollers [TestNG-PoolService-0] scrolling to element
+2022-05-04 06:36:13,299 INFO c.a.s.s.f.s.Scrollers [TestNG-PoolService-0] scrolled to element
+2022-05-04 06:36:13,300 INFO c.a.s.s.f.s.State [TestNG-PoolService-0] verifying whether element is enabled
+2022-05-04 06:36:13,307 INFO c.a.s.s.f.s.State [TestNG-PoolService-0] verified: element is enabled
+2022-05-04 06:36:13,308 INFO c.a.s.s.f.s.ElementActions [TestNG-PoolService-0] clicking on element using javascript
+2022-05-04 06:36:13,445 INFO c.a.s.s.f.s.ElementActions [TestNG-PoolService-0] clicked on element using javascript
+2022-05-04 06:36:13,466 INFO c.a.s.s.f.a.w.ForwardWindowSwitchAspect [TestNG-PoolService-0] before : triggering forward window switch aop
+2022-05-04 06:36:13,483 INFO c.a.s.s.f.s.WindowSwitcher [TestNG-PoolService-0] switching to succeeding window
+2022-05-04 06:36:13,505 INFO c.a.s.s.f.s.WindowSwitcher [TestNG-PoolService-0] switched to succeeding window
+2022-05-04 06:36:13,505 INFO c.a.s.s.f.a.w.ForwardWindowSwitchAspect [TestNG-PoolService-0] before : triggered forward window switch aop
+2022-05-04 06:36:13,513 INFO c.a.s.s.f.s.State [TestNG-PoolService-0] verifying if page load is completed
+2022-05-04 06:36:17,215 INFO c.a.s.s.f.s.State [TestNG-PoolService-0] verified: page load is completed
+2022-05-04 06:36:17,216 INFO c.a.s.s.f.s.ElementTypeConverter [TestNG-PoolService-0] converting by locator to web element
+2022-05-04 06:36:17,228 INFO c.a.s.s.f.s.ElementTypeConverter [TestNG-PoolService-0] converted by locator to web element
+2022-05-04 06:36:17,229 INFO c.a.s.s.f.s.Visibility [TestNG-PoolService-0] verifying whether element is displayed
+2022-05-04 06:36:17,268 INFO c.a.s.s.f.s.Visibility [TestNG-PoolService-0] verified: element is displayed
+2022-05-04 06:36:17,271 INFO c.a.s.s.f.s.ElementTypeConverter [TestNG-PoolService-0] converting by locator to web element
+2022-05-04 06:36:17,278 INFO c.a.s.s.f.s.ElementTypeConverter [TestNG-PoolService-0] converted by locator to web element
+2022-05-04 06:36:17,278 INFO c.a.s.s.f.s.Scrollers [TestNG-PoolService-0] scrolling to element
+2022-05-04 06:36:17,289 INFO c.a.s.s.f.s.Scrollers [TestNG-PoolService-0] scrolled to element
+2022-05-04 06:36:17,292 INFO c.a.s.s.f.s.ElementTypeConverter [TestNG-PoolService-0] converting by locator to web element
+2022-05-04 06:36:17,353 INFO c.a.s.s.f.s.ElementTypeConverter [TestNG-PoolService-0] converted by locator to web element
+2022-05-04 06:36:17,354 INFO c.a.s.s.f.s.ElementActions [TestNG-PoolService-0] fetching text from element
+2022-05-04 06:36:17,376 INFO c.a.s.s.f.s.ElementActions [TestNG-PoolService-0] fetched text from element
+2022-05-04 06:36:17,396 INFO c.a.s.s.f.s.Screenshots [TestNG-PoolService-0] taking screenshot
+2022-05-04 06:36:17,970 INFO c.a.s.s.f.s.Screenshots [TestNG-PoolService-0] took screenshot

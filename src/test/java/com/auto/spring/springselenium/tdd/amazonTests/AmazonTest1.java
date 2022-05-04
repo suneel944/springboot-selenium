@@ -4,9 +4,9 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import com.auto.spring.springselenium.pages.amazon.AmazonPage;
 import com.auto.spring.springselenium.SpringSeleniumBaseTestNGTest;
-import com.auto.spring.springselenium.framework.Readers.ConfigReader;
+import com.auto.spring.springselenium.framework.readers.ConfigReader;
 import com.auto.spring.springselenium.pages.amazon.AmazonProductPage;
-import com.auto.spring.springselenium.framework.annotations.LazyAutowired;
+import com.auto.spring.springselenium.framework.annotations.others.LazyAutowired;
 
 public class AmazonTest1 extends SpringSeleniumBaseTestNGTest
 {

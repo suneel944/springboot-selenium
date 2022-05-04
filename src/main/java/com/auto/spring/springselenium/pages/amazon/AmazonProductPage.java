@@ -1,14 +1,15 @@
 package com.auto.spring.springselenium.pages.amazon;
 
 import org.openqa.selenium.By;
-import com.auto.spring.springselenium.pages.Base;
+import com.auto.spring.springselenium.pages.BasePage;
 import com.auto.spring.springselenium.framework.service.*;
-import com.auto.spring.springselenium.framework.annotations.Window;
-import com.auto.spring.springselenium.framework.annotations.LazyAutowired;
-import com.auto.spring.springselenium.framework.annotations.TakeScreenshot;
+import com.auto.spring.springselenium.framework.annotations.others.Page;
+import com.auto.spring.springselenium.framework.annotations.others.LazyAutowired;
+import com.auto.spring.springselenium.framework.annotations.screenshots.TakeScreenshot;
+import com.auto.spring.springselenium.framework.annotations.windowswitching.IterativeForwardWindowSwitch;
 
-@Window("Samsung")
-public class AmazonProductPage extends Base
+@Page
+public class AmazonProductPage extends BasePage
 {
     @LazyAutowired
     private ElementTypeConverter elementTypeConverter;
@@ -39,6 +40,7 @@ public class AmazonProductPage extends Base
     }
 
     @Override
+    @IterativeForwardWindowSwitch()
     public boolean isAt(String... args)
     {
         return this.wait.until((d) ->  this.state.isPageLoaded() && this.visibility.isElementDisplayed(this.elementTypeConverter.returnWebElement(txtProductFeatures)));

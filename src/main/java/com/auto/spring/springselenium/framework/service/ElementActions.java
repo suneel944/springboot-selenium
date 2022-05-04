@@ -4,8 +4,8 @@ import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.JavascriptExecutor;
-import com.auto.spring.springselenium.framework.annotations.LazyService;
-import com.auto.spring.springselenium.framework.annotations.LazyAutowired;
+import com.auto.spring.springselenium.framework.annotations.others.LazyService;
+import com.auto.spring.springselenium.framework.annotations.others.LazyAutowired;
 
 
 @LazyService

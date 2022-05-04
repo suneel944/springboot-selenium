@@ -5,16 +5,16 @@ import java.util.Comparator;
 import org.openqa.selenium.By;
 import java.util.stream.Collectors;
 import org.openqa.selenium.WebElement;
-import com.auto.spring.springselenium.pages.Base;
+import com.auto.spring.springselenium.pages.BasePage;
 import com.auto.spring.springselenium.framework.service.State;
 import com.auto.spring.springselenium.framework.service.Scrollers;
 import com.auto.spring.springselenium.framework.service.ElementActions;
-import com.auto.spring.springselenium.framework.annotations.PageFragment;
-import com.auto.spring.springselenium.framework.annotations.LazyAutowired;
 import com.auto.spring.springselenium.framework.service.ElementTypeConverter;
+import com.auto.spring.springselenium.framework.annotations.others.PageFragment;
+import com.auto.spring.springselenium.framework.annotations.others.LazyAutowired;
 
 @PageFragment
-public class ProductContent extends Base
+public class ProductContent extends BasePage
 {
     @LazyAutowired
     private ElementTypeConverter elementTypeConverter;

@@ -1,8 +1,8 @@
-package com.auto.spring.springselenium.framework.Readers;
+package com.auto.spring.springselenium.framework.readers;
 
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;
-import com.auto.spring.springselenium.framework.annotations.LazyConfiguration;
+import com.auto.spring.springselenium.framework.annotations.others.LazyConfiguration;
 
 @Getter
 @LazyConfiguration

@@ -1,4 +1,4 @@
-package com.auto.spring.springselenium.framework.annotations;
+package com.auto.spring.springselenium.framework.annotations.others;
 
 import java.lang.annotation.*;
 import org.springframework.stereotype.Component;

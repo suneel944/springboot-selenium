@@ -13,15 +13,15 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.context.ApplicationContext;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.auto.spring.springselenium.framework.annotations.LazyService;
-import com.auto.spring.springselenium.framework.annotations.LazyAutowired;
+import com.auto.spring.springselenium.framework.annotations.others.LazyService;
+import com.auto.spring.springselenium.framework.annotations.others.LazyAutowired;
 
 @LazyService
 @Log4j2
 public class Screenshots
 {
     @LazyAutowired
-    private ApplicationContext ctxt;
+    private ApplicationContext applicationContext;
 
     @Lazy
     @Autowired
@@ -35,7 +35,7 @@ public class Screenshots
         try
         {
             log.info("taking screenshot");
-            File sourceFile = this.ctxt.getBean(TakesScreenshot.class).getScreenshotAs(OutputType.FILE);
+            File sourceFile = this.applicationContext.getBean(TakesScreenshot.class).getScreenshotAs(OutputType.FILE);
             Date now = new Date();
             long ut = now.getTime() / 100L;
             FileCopyUtils.copy(sourceFile, this.path.resolve((testName+"_"+String.valueOf(ut)+".png")).toFile());
@@ -51,7 +51,7 @@ public class Screenshots
 
     public byte[] getScreenshot()
     {
-        return this.ctxt.getBean(TakesScreenshot.class).getScreenshotAs(OutputType.BYTES);
+        return this.applicationContext.getBean(TakesScreenshot.class).getScreenshotAs(OutputType.BYTES);
     }
 
 }

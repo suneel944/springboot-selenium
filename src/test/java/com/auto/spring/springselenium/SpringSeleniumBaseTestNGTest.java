@@ -5,8 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterSuite;
 import org.springframework.context.ApplicationContext;
 import org.springframework.boot.test.context.SpringBootTest;
-import com.auto.spring.springselenium.framework.annotations.LazyAutowired;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
+import com.auto.spring.springselenium.framework.annotations.others.LazyAutowired;
 
 @SpringBootTest
 @Getter

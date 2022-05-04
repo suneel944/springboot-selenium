@@ -5,9 +5,8 @@ import io.cucumber.java.en.*;
 import io.cucumber.spring.CucumberContextConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 import com.auto.spring.springselenium.pages.amazon.AmazonPage;
-import static org.apache.commons.lang3.reflect.TypeUtils.isInstance;
 import com.auto.spring.springselenium.pages.amazon.AmazonProductPage;
-import com.auto.spring.springselenium.framework.annotations.LazyAutowired;
+import com.auto.spring.springselenium.framework.annotations.others.LazyAutowired;
 
 @SpringBootTest
 @CucumberContextConfiguration
@@ -65,7 +64,7 @@ public class AmazonSteps
         @Then("^I should see feature bullet content for the product$")
         public void verifyProductContentIsDisplayed()
         {
-                Assert.assertTrue(isInstance(this.amazonProductPage.getProductTextContent(), String.class) && !this.amazonProductPage.getProductTextContent().isEmpty(), "failed to visualise product feature bullet points");
+                Assert.assertTrue(!this.amazonProductPage.getProductTextContent().isEmpty(), "failed to visualise product feature bullet points");
         }
 }
 

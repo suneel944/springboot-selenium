@@ -7,7 +7,7 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.logging.LoggingPreferences;
-import com.auto.spring.springselenium.framework.annotations.LazyService;
+import com.auto.spring.springselenium.framework.annotations.others.LazyService;
 
 @LazyService
 public class BrowserOptions

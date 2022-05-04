@@ -1,4 +1,4 @@
-package com.auto.spring.springselenium.framework.beans;
+package com.auto.spring.springselenium.framework.beans.drivers.selenium;
 
 import java.time.Duration;
 import org.openqa.selenium.WebDriver;
@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
-import com.auto.spring.springselenium.framework.annotations.LazyConfiguration;
+import com.auto.spring.springselenium.framework.annotations.others.LazyConfiguration;
 
 @LazyConfiguration
 public class WebDriverWaitBean

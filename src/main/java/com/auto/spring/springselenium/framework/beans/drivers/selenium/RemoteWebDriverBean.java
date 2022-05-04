@@ -1,4 +1,4 @@
-package com.auto.spring.springselenium.framework.beans;
+package com.auto.spring.springselenium.framework.beans.drivers.selenium;
 
 import java.net.URL;
 import org.openqa.selenium.WebDriver;
@@ -6,10 +6,10 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.springframework.context.annotation.Profile;
 import org.springframework.beans.factory.annotation.Value;
-import com.auto.spring.springselenium.framework.annotations.ThreadScopeBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import com.auto.spring.springselenium.framework.annotations.LazyConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import com.auto.spring.springselenium.framework.annotations.others.LazyConfiguration;
+import com.auto.spring.springselenium.framework.annotations.parallelexecution.ThreadScopeBean;
 
 @Profile("remote")
 @LazyConfiguration

@@ -1,6 +1,4 @@
-package com.auto.spring.springselenium.framework.annotations;
-
-import org.springframework.context.annotation.Lazy;
+package com.auto.spring.springselenium.framework.annotations.screenshots;
 
 import java.lang.annotation.*;
 

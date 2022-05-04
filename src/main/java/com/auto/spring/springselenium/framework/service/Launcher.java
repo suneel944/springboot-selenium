@@ -2,8 +2,8 @@ package com.auto.spring.springselenium.framework.service;
 
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;
-import com.auto.spring.springselenium.framework.annotations.LazyService;
-import com.auto.spring.springselenium.framework.annotations.LazyAutowired;
+import com.auto.spring.springselenium.framework.annotations.others.LazyService;
+import com.auto.spring.springselenium.framework.annotations.others.LazyAutowired;
 
 @LazyService
 @Log4j2

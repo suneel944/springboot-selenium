@@ -6,7 +6,7 @@ import io.cucumber.java.Scenario;
 import org.openqa.selenium.WebDriver;
 import org.springframework.context.ApplicationContext;
 import com.auto.spring.springselenium.framework.service.Screenshots;
-import com.auto.spring.springselenium.framework.annotations.LazyAutowired;
+import com.auto.spring.springselenium.framework.annotations.others.LazyAutowired;
 
 public class Hooks
 {

@@ -1,9 +1,8 @@
-package com.auto.spring.springselenium.framework.annotations;
-
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Scope;
+package com.auto.spring.springselenium.framework.annotations.parallelexecution;
 
 import java.lang.annotation.*;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Scope;
 
 @Bean
 @Scope("browserscope")

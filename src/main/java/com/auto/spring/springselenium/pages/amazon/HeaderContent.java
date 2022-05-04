@@ -1,13 +1,13 @@
 package com.auto.spring.springselenium.pages.amazon;
 
 import org.openqa.selenium.By;
-import com.auto.spring.springselenium.pages.Base;
+import com.auto.spring.springselenium.pages.BasePage;
 import com.auto.spring.springselenium.framework.service.*;
-import com.auto.spring.springselenium.framework.annotations.PageFragment;
-import com.auto.spring.springselenium.framework.annotations.LazyAutowired;
+import com.auto.spring.springselenium.framework.annotations.others.PageFragment;
+import com.auto.spring.springselenium.framework.annotations.others.LazyAutowired;
 
 @PageFragment
-public class HeaderContent extends Base
+public class HeaderContent extends BasePage
 {
     @LazyAutowired
     private Visibility visibility;

@@ -116,9 +116,9 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.0.0-M6</version>
 				<configuration>
-					<suiteXmlFiles>
-						<suiteXmlFile>testng-suite.xml</suiteXmlFile>
-					</suiteXmlFiles>
+					<includes>
+						<include>com.auto.spring.springselenium.runners.CucumberRunner</include>
+					</includes>
 				</configuration>
 			</plugin>
 			<plugin>

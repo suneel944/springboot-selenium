@@ -8,6 +8,18 @@ import com.auto.spring.springselenium.framework.annotations.others.LazyConfigura
 @LazyConfiguration
 public class ConfigReader
 {
+    @Value("${selenium.directory.downloads}")
+    private String seleniumDownloadDirectory;
+
+    @Value("${selenium.log.level}")
+    private String seleniumLogLevel;
+
+    @Value("${browser.run.mode}")
+    private String browserRunMode;
+
+    @Value("${options.acceptinscecurecertifcates}")
+    private String acceptInsecureCertificates;
+
     @Value("${window.title}")
     private String productPageTitle;
 

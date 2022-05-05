@@ -26,12 +26,12 @@ public class FilterContent extends BasePage
 
     private By txtFilterContent(String filterCategoryHeading)
     {
-        return By.xpath(".//*[@id='s-refinements']//*[text()='" + filterCategoryHeading + "']");
+        return By.xpath(String.format(".//*[@id='s-refinements']//*[text()='%s']",filterCategoryHeading));
     }
 
     private By chkBoxFilterContentUnderCategory(String filterCategoryHeading, String filterCategoryContentName)
     {
-        return By.xpath(".//*[@id='s-refinements']//*[text()='"+ filterCategoryHeading+"']/..//following-sibling::ul//*[text()='"+filterCategoryContentName+"']");
+        return By.xpath(String.format(".//*[@id='s-refinements']//*[text()='%s']/..//following-sibling::ul//*[text()='%s']",filterCategoryHeading, filterCategoryContentName));
     }
 
     public boolean clickOnFilterContentUnderCategory(String filterCategoryHeading, String filterCategoryContentName)

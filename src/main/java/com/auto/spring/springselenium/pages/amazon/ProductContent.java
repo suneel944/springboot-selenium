@@ -28,8 +28,6 @@ public class ProductContent extends BasePage
     @LazyAutowired
     private ElementActions elementActions;
 
-    private By pgProductSearchContent = By.xpath(".//*[@data-component-type='s-search-results']/..");
-
     private By weProductCardPrices = By.xpath("//span[@class='a-price-whole']");
 
     public boolean clickOnTheNthHighestPricedProduct(Integer productIndex)

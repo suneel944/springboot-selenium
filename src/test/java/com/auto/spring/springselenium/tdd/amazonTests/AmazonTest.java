@@ -45,6 +45,6 @@ public class AmazonTest extends SpringSeleniumBaseTestNGTest
         /*verify if the product page is loaded and content is displayed*/
         Assert.assertTrue(this.amazonProductPage.isAt(), "failed to load individual product specific page");
         Assert.assertTrue(this.amazonProductPage.scrollToProductTextContent(), "failed to scroll to product about section");
-        Assert.assertTrue(!this.amazonProductPage.getProductTextContent().isEmpty(), "product about section is not displayed");
+        Assert.assertFalse(this.amazonProductPage.getProductTextContent().isEmpty(), "product about section is displayed");
     }
 }

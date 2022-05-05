@@ -44,5 +44,7 @@ public class AmazonTest1 extends SpringSeleniumBaseTestNGTest
         Assert.assertTrue(this.amazonPage.getProductContent().clickOnTheNthHighestPricedProduct(configReader.getProductIndex()), "failed to click on the "+configReader.getProductIndex()+" highest valued product");
         /*verify if the product page is loaded and content is displayed*/
         Assert.assertTrue(this.amazonProductPage.isAt(), "failed to load individual product specific page");
+        Assert.assertTrue(this.amazonProductPage.scrollToProductTextContent(), "failed to scroll to product about section");
+        Assert.assertFalse(this.amazonProductPage.getProductTextContent().isEmpty(), "product about section is displayed");
     }
 }

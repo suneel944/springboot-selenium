@@ -1,7 +1,5 @@
 package com.auto.spring.springselenium.pages.amazon;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import com.auto.spring.springselenium.pages.BasePage;
 import org.springframework.beans.factory.annotation.Value;
 import com.auto.spring.springselenium.framework.service.Launcher;
@@ -11,7 +9,6 @@ import com.auto.spring.springselenium.framework.annotations.others.LazyAutowired
 @Page
 public class AmazonPage extends BasePage
 {
-    private Logger logger = LoggerFactory.getLogger(AmazonPage.class);
     @LazyAutowired
     private Launcher launcher;
 

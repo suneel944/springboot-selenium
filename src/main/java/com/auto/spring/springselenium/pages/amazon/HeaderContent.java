@@ -26,23 +26,21 @@ public class HeaderContent extends BasePage
 
     private By edtSearchField = By.xpath(".//*[@id='twotabsearchtextbox']");
 
-    private By btnSearchSubmit = By.xpath(".//*[@id='nav-search-submit-button']");
-
     private By lnkAllNavigation = By.xpath(".//*[@id='nav-hamburger-menu']");
 
     private By txtAllNavigationMenuHeadings(String headingName)
     {
-        return By.xpath(".//*[@id='hmenu-content']//*[@class='hmenu hmenu-visible']//*[@class='hmenu-item hmenu-title '][text()='"+headingName+"']");
-    };
+        return By.xpath(String.format(".//*[@id='hmenu-content']//*[@class='hmenu hmenu-visible']//*[@class='hmenu-item hmenu-title '][text()='%s']",headingName));
+    }
 
     private By lnkAllNavigationMenuHeadingSubMenu(String subMenuName)
     {
-        return By.xpath(".//*[@id='hmenu-content']//*[@class='hmenu hmenu-visible']//*[@class='hmenu-item']//*[text()='"+subMenuName+"']");
+        return By.xpath(String.format(".//*[@id='hmenu-content']//*[@class='hmenu hmenu-visible']//*[@class='hmenu-item']//*[text()='%s']", subMenuName));
     }
 
     private By lnkAllNavigationMenuHeadingSubMenuRightExtensionSubMenu(String rightExtensionSubMenuName)
     {
-        return By.xpath(".//*[@class='hmenu-item'][text()='"+rightExtensionSubMenuName+"']");
+        return By.xpath(String.format(".//*[@class='hmenu-item'][text()='%s']", rightExtensionSubMenuName));
     }
 
     public boolean clickOnAllNavigationHamburger()

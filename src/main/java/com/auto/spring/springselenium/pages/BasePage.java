@@ -1,11 +1,10 @@
 package com.auto.spring.springselenium.pages;
 
 import org.openqa.selenium.WebDriver;
+import javax.annotation.PostConstruct;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import com.auto.spring.springselenium.framework.annotations.others.LazyAutowired;
-
-import javax.annotation.PostConstruct;
 
 public abstract class BasePage
 {

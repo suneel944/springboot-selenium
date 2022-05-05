@@ -43,6 +43,6 @@ public class AmazonProductPage extends BasePage
     @IterativeForwardWindowSwitch()
     public boolean isAt(String... args)
     {
-        return this.wait.until((d) ->  this.state.isPageLoaded() && this.visibility.isElementDisplayed(this.elementTypeConverter.returnWebElement(txtProductFeatures)));
+        return this.wait.until(d ->  this.state.isPageLoaded() && this.visibility.isElementDisplayed(this.elementTypeConverter.returnWebElement(txtProductFeatures)));
     }
 }

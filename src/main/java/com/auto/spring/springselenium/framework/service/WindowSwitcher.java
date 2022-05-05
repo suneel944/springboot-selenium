@@ -23,7 +23,7 @@ public class WindowSwitcher
             for (int i=iterations; i<0; i--)
             {
                 log.info("switching to preceding window");
-                ArrayList<String> windowHandles = new ArrayList<String>(driver.getWindowHandles());
+                ArrayList<String> windowHandles = new ArrayList<>(driver.getWindowHandles());
                 String handle = driver.getWindowHandle();
                 int windowHandlesSize = windowHandles.size();
                 for (int k = 0; k < windowHandlesSize; k++)
@@ -63,7 +63,7 @@ public class WindowSwitcher
             {
                 String handlePointer = "";
                 log.info("switching to succeeding window");
-                ArrayList<String> windowHandles = new ArrayList<String>(driver.getWindowHandles());
+                ArrayList<String> windowHandles = new ArrayList<>(driver.getWindowHandles());
                 String handle = driver.getWindowHandle();
                 int windowHandlesSize = windowHandles.size();
                 for (int k = 0; k < windowHandlesSize; k++)
@@ -101,12 +101,17 @@ public class WindowSwitcher
         try
         {
             if (!driver.getTitle().equals(title))
+            {
                 log.info("switching window by {} title", title);
                 driver.getWindowHandles().stream()
                         .map(handle -> driver.switchTo().window(handle)
                                 .getTitle()).filter(t -> t.startsWith(title))
-                        .findFirst().orElseThrow(() -> {throw new RuntimeException("no such window");});
+                        .findFirst().orElseThrow(() ->
+                        {
+                            throw new RuntimeException("no such window");
+                        });
                 log.info("switched to window having {} title", title);
+            }
                 return true;
         } catch (Exception e)
         {

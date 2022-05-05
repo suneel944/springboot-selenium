@@ -7,7 +7,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import com.auto.spring.springselenium.framework.annotations.others.LazyService;
 import com.auto.spring.springselenium.framework.annotations.others.LazyAutowired;
 
-
 @LazyService
 @Log4j2
 public class ElementActions

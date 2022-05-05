@@ -16,8 +16,6 @@ import com.auto.spring.springselenium.framework.readers.ConfigReader;
 import com.auto.spring.springselenium.framework.annotations.others.LazyService;
 import com.auto.spring.springselenium.framework.annotations.others.LazyAutowired;
 
-import javax.annotation.PostConstruct;
-
 @LazyService
 @Log4j2
 public class BrowserOptions

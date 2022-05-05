@@ -7,6 +7,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 @CucumberOptions(
         features = "src/test/java/com/auto/spring/springselenium/bdd/features",
         glue = "com.auto.spring.springselenium.bdd",
+        tags = "@amazon",
         plugin = {
                 "pretty",
                 "json:temp/reports/json/report.json",

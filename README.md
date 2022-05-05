@@ -7,6 +7,7 @@ A spring boot based cucumber + testNg selenium framework
 - [x] Parallel test execution
 - [x] Cucumber + TestNg
 - [x] Selenium Grid
+- [x] Dockerization
 - [x] [Spring profiles](https://www.baeldung.com/spring-profiles)
 - [x] [Aspect-Oriented Programming (AOP)](https://www.baeldung.com/spring-aop)
 

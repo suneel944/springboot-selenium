@@ -3,7 +3,6 @@ package com.auto.spring.springselenium.framework.service;
 import java.io.File;
 import java.nio.file.Path;
 import java.util.Date;
-
 import com.github.javafaker.Faker;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.OutputType;

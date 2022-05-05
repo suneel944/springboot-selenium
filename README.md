@@ -34,14 +34,6 @@ A spring boot based cucumber + testNg selenium framework
 - [x] @IterativeForwardWindowSwitch
 - [x] @TitleBasedWindowSwitch
 
-#### To learn more about the spring boot, please see the below links which might be helpful in understanding the same:
-- [Spring boot official](https://spring.io/projects/spring-boot)
-- [Spring boot video course by Telusko](https://www.youtube.com/watch?v=35EQXmHKZYs)
-- [Spring boot video course by Amigoscode](https://www.youtube.com/watch?v=9SGDpanrc8U)
-- [Spring boot integration in to test automation by Execute Automation](https://www.youtube.com/watch?v=cG6ZLiRxn1M&list=PL6tu16kXT9PrDr6kMGQ-CgnvCsFxrq1eS)
-- [Spring boot integration in to test automation by VinsGuru](https://www.udemy.com/course/cucumber-with-spring-boot/)
-
-
 ### How to start?
 Clone the repository and below are few dependencies which are required for the project to run: 
 - [x] Maven 3.8.5 or greater (preferably Maven 3.8.5)

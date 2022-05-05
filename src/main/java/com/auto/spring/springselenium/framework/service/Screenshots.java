@@ -37,7 +37,7 @@ public class Screenshots
             File sourceFile = this.applicationContext.getBean(TakesScreenshot.class).getScreenshotAs(OutputType.FILE);
             Date now = new Date();
             long ut = now.getTime() / 100L;
-            FileCopyUtils.copy(sourceFile, this.path.resolve((testName+"_"+String.valueOf(ut)+".png")).toFile());
+            FileCopyUtils.copy(sourceFile, this.path.resolve((String.format(testName+"_%d.png",ut))).toFile());
             log.info("took screenshot");
             return true;
         } catch (Exception e)

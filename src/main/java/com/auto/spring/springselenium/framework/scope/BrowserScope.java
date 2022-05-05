@@ -8,6 +8,7 @@ import org.springframework.context.support.SimpleThreadScope;
 
 public class BrowserScope extends SimpleThreadScope
 {
+    @Override
     public Object get(String name, ObjectFactory<?> objectFactory) {
         Object obj = super.get(name, objectFactory);
         SessionId sessionId = ((RemoteWebDriver)obj).getSessionId();
@@ -19,6 +20,9 @@ public class BrowserScope extends SimpleThreadScope
         return obj;
     }
 
+    @Override
     public void registerDestructionCallback(String name, Runnable callback) {
+        /*The parent implementation provides a log which is not
+        required in this project context. Hence overridden*/
     }
 }

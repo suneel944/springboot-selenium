@@ -20,7 +20,7 @@ public class AmazonTest extends SpringSeleniumBaseTestNGTest
     private AmazonProductPage amazonProductPage;
 
     @Test
-    public void amazonTest()
+    public void amazonTest_001()
     {
         /*open amazon.in*/
         Assert.assertTrue(this.amazonPage.goTo(), "failed to navigate to amazon site");

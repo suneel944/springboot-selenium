@@ -1,9 +1,9 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name = "spring-selenium">
-    <test name = "Parallel Tests" parallel = "classes" thread-count="2">
+    <test name = "Normal Tests">
         <classes>
             <class name = "com.auto.spring.springselenium.tdd.amazonTests.AmazonTest" />
-            <class name = "com.auto.spring.springselenium.tdd.amazonTests.AmazonTest1" />
+            <class name = "com.auto.spring.springselenium.runners.CucumberRunner" />
         </classes>
     </test>
 </suite>

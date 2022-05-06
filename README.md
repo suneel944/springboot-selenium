@@ -1,4 +1,5 @@
 ![CI workflow](https://github.com/suneel944/springboot-selenium/actions/workflows/springboot-ci.yml/badge.svg)
+![CodeQL Analysis Workflow](https://github.com/suneel944/springboot-selenium/actions/workflows/codeql-analysis.yml/badge.svg)
 # Springboot-selenium
 A spring boot based cucumber + testNg selenium framework
 <br><br>

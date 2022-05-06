@@ -23,25 +23,26 @@ public class AmazonTest1 extends SpringSeleniumBaseTestNGTest
     public void amazonTest_001()
     {
         /*open amazon.in*/
-        Assert.assertTrue(this.amazonPage.goTo(), "failed to navigate to amazon site");
+        this.amazonPage.goTo();
         /*verify amazon page is opened*/
         Assert.assertTrue(this.amazonPage.isAt(), "failed to load amazon home page");
 
         /*click on chain hamburger menu and their sub menus and reach tv pages*/
-        Assert.assertTrue(this.amazonPage.getHeaderContent().clickOnAllNavigationHamburger(), "failed to click on all hamburger menu");
-        Assert.assertTrue(this.amazonPage.getHeaderContent().scrollToAllNavigationHamburgerMenuHeading(configReader.getHeadingName()), "failed to scroll to "+configReader.getHeadingName()+" hamburger menu heading");
-        Assert.assertTrue(this.amazonPage.getHeaderContent().clickOnAllNavigationHamburgerMenuHeadingSubMenu(configReader.getSubMenuName()), "failed to click on "+configReader.getHeadingName()+" hamburger menu heading's "+configReader.getSubMenuName()+" submenu");
-        Assert.assertTrue(this.amazonPage.getHeaderContent().clickOnAllNavigationHamburgerMenuHeadingSubMenuRightExtensionSubMenu(configReader.getRightExtensionSubMenuName()), "failed to click on "+configReader.getHeadingName()+" hamburger menu heading's "+configReader.getSubMenuName()+" submenu's '"+configReader.getRightExtensionSubMenuName()+"' right extension submenu");
+
+        this.amazonPage.getHeaderContent().clickOnAllNavigationHamburger();
+        this.amazonPage.getHeaderContent().scrollToAllNavigationHamburgerMenuHeading(configReader.getHeadingName());
+        this.amazonPage.getHeaderContent().clickOnAllNavigationHamburgerMenuHeadingSubMenu(configReader.getSubMenuName());
+        this.amazonPage.getHeaderContent().clickOnAllNavigationHamburgerMenuHeadingSubMenuRightExtensionSubMenu(configReader.getRightExtensionSubMenuName());
         /*verify filter content is loaded*/
-        Assert.assertTrue(this.amazonPage.getFilterContent().isAt(configReader.getFilterCategoryHeading()), "failed to load filter contents");
+        Assert.assertTrue(this.amazonPage.getFilterContent().isAt(configReader.getFilterCategoryHeading()));
 
         /*click on the required filter category*/
-        Assert.assertTrue(this.amazonPage.getFilterContent().clickOnFilterContentUnderCategory(configReader.getFilterCategoryHeading(), configReader.getFilterCategoryContentName()), "failed to click on "+configReader.getFilterCategoryHeading()+" filter heading content and "+configReader.getFilterCategoryContentName()+" filter category category");
+        this.amazonPage.getFilterContent().clickOnFilterContentUnderCategory(configReader.getFilterCategoryHeading(), configReader.getFilterCategoryContentName());
         /*verify product catalogue contents are displayed*/
         Assert.assertTrue(this.amazonPage.getProductContent().isAt(), "failed to load "+configReader.getFilterCategoryContentName()+" product catalogue contents");
 
         /*click on the nth highest valued product from the available list*/
-        Assert.assertTrue(this.amazonPage.getProductContent().clickOnTheNthHighestPricedProduct(configReader.getProductIndex()), "failed to click on the "+configReader.getProductIndex()+" highest valued product");
+        this.amazonPage.getProductContent().clickOnTheNthHighestPricedProduct(configReader.getProductIndex());
         /*verify if the product page is loaded and content is displayed*/
         Assert.assertTrue(this.amazonProductPage.isAt(), "failed to load individual product specific page");
         Assert.assertTrue(this.amazonProductPage.scrollToProductTextContent(), "failed to scroll to product about section");
